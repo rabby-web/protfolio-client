@@ -1,6 +1,8 @@
-"use client"; // Required for client-side interactivity
+"use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import {
@@ -13,116 +15,122 @@ import { Menu } from "lucide-react";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
+  const pathname = usePathname();
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedDarkMode = localStorage.getItem("darkMode");
+      if (storedDarkMode !== null) {
+        setDarkMode(JSON.parse(storedDarkMode)); // Convert string to boolean
+        document.documentElement.classList.toggle(
+          "dark",
+          JSON.parse(storedDarkMode)
+        );
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode)); // Convert boolean to string
     document.documentElement.classList.toggle("dark", darkMode);
-  };
+  }, [darkMode]);
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
-    <nav className="bg-white dark:bg-[#0E1217] border-b border-gray-300">
+    <nav className="bg-white dark:bg-[#111827] border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div className="flex items-center">
-            <a
-              href="#"
-              className="text-xl font-bold text-gray-900 dark:text-white "
-            >
-              Logo
-            </a>
-          </div>
+          <Link
+            href="/"
+            className="text-xl font-bold text-gray-900 dark:text-gray-50"
+          >
+            Portfolio {/* Replace with your logo component or image */}
+          </Link>
 
-          {/* Menu for Desktop */}
           <div className="hidden md:flex space-x-6">
-            <a
-              href="#"
-              className="text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300"
-            >
-              Services
-            </a>
-            <a
-              href="#"
-              className="text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300"
-            >
-              Contact
-            </a>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-300 ${
+                  pathname === link.href
+                    ? "font-bold text-[#6366F1] dark:text-[#818CF8]"
+                    : ""
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
-          {/* Toggle and Login Button */}
           <div className="flex items-center space-x-4">
-            {/* Dark/Light Mode Toggle (Hidden on Small Devices) */}
-            <div className="hidden md:flex items-center space-x-2 ">
+            <div className="hidden md:flex items-center space-x-2">
               <Switch
                 id="dark-mode"
                 checked={darkMode}
-                onCheckedChange={toggleDarkMode}
-                className="relative inline-flex items-center h-6 rounded-full w-14 bg-gradient-to-r from-pink-500 to-red-500 dark:from-[#FD619D] dark:to-[#FF2D55] transition-all duration-300"
+                onCheckedChange={setDarkMode}
+                className="relative inline-flex items-center h-6 rounded-full w-14 bg-gray-200 dark:bg-gray-700"
               >
                 <span className="sr-only">Toggle Dark Mode</span>
                 <span
                   className={`${
                     darkMode ? "translate-x-7" : "translate-x-0"
-                  } inline-block w-6 h-6 transform bg-white rounded-full shadow-lg transition-all duration-300`}
+                  } inline-block w-6 h-6 transform bg-white dark:bg-gray-800 rounded-full shadow-lg transition-all duration-300`}
                 />
               </Switch>
             </div>
 
-            {/* Login Button (Hidden on Small Devices) */}
-            {/* <Button
-              variant="default"
-              className="hidden md:inline-flex dark:bg-[#FD619D] dark:text-black font-semibold"
-            >
-              Login
-            </Button> */}
-            <Button
-              variant="default"
-              className="hidden md:inline-flex bg-gradient-to-r from-pink-500 to-red-500 text-white dark:from-[#FD619D] dark:to-[#FF2D55] dark:text-black font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-            >
+            <Button className="hidden md:inline-flex bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]">
               Login
             </Button>
 
-            {/* Mobile Menu Button (Visible on Small Devices) */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="md:hidden">
                 <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-full" />
+                  <Menu className="h-6 w-full text-gray-600 dark:text-gray-400" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>Home</DropdownMenuItem>
-                <DropdownMenuItem>About</DropdownMenuItem>
-                <DropdownMenuItem>Services</DropdownMenuItem>
-                <DropdownMenuItem>Contact</DropdownMenuItem>
-
-                <DropdownMenuItem>Login</DropdownMenuItem>
-                <DropdownMenuItem>
-                  {" "}
-                  <div className="flex flex-col  items-center space-x-2">
-                    <Switch
-                      id="dark-mode"
-                      checked={darkMode}
-                      onCheckedChange={toggleDarkMode}
-                    />
-                    {/* <label
-                    htmlFor="dark-mode"
-                    className="text-sm font-medium text-gray-900 dark:text-white"
+              <DropdownMenuContent
+                align="end"
+                className="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-700"
+              >
+                {navLinks.map((link) => (
+                  <DropdownMenuItem
+                    key={link.href}
+                    className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
+                    <Link
+                      href={link.href}
+                      className={`${
+                        pathname === link.href
+                          ? "font-bold text-[#6366F1] dark:text-[#818CF8]"
+                          : ""
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuItem className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <Button className="bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-4 py-1 rounded-md transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]">
+                    Login
+                  </Button>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center space-x-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <Switch
+                    id="dark-mode-mobile"
+                    checked={darkMode}
+                    onCheckedChange={setDarkMode}
+                  />
+                  <span className="text-gray-600 dark:text-gray-400">
                     Dark Mode
-                  </label> */}
-                  </div>
+                  </span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

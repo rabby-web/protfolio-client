@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="bg-white dark:bg-[#0E1217] text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+        <div className="bg-[#F9FAFD] dark:bg-[#0E1217] text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
           <Navbar></Navbar>
           <ThemeProvider
             attribute="class"
