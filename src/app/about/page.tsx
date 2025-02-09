@@ -69,21 +69,26 @@ const AboutPage = () => {
                   />
                 </div>
                 <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
-                  Hi, I{"'"}m John Doe
+                  Hi, I{"'"}m Zulkar Naeem Rabby
                 </h2>
               </div>
               <p className="text-gray-600 dark:text-gray-300 mt-4 text-lg">
-                A full-stack web developer passionate about building efficient
-                and scalable applications.
+                I am a passionate Full-Stack Web Developer specializing in the
+                MERN (MongoDB, Express.js, React, Node.js) stack. With a strong
+                foundation in both frontend and backend development, I build
+                dynamic, scalable, and high-performance web applications. I
+                focus on clean code, responsive design, and seamless user
+                experiences. Always eager to learn and implement the latest
+                technologies to deliver innovative solutions. 🚀
               </p>
-              <p className="text-gray-600 dark:text-gray-300 mt-4 text-lg">
+              {/* <p className="text-gray-600 dark:text-gray-300 mt-4 text-lg">
                 With expertise in{" "}
                 <strong>
                   React.js, Next.js, Redux, TypeScript, Node.js, Express,
                   MongoDB, Docker, and AWS
                 </strong>
                 , I ensure smooth development from design to deployment.
-              </p>
+              </p> */}
               <p className="text-gray-700 dark:text-gray-400 font-semibold mt-6 text-lg">
                 I love solving complex problems and delivering high-quality
                 software solutions. 🚀

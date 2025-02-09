@@ -1,103 +1,49 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-background border-t border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About Section */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              About Me
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Passionate developer and designer creating meaningful digital
-              experiences. Let&apos;s build something amazing together!
-            </p>
-          </div>
-
-          {/* Quick Links Section */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/projects"
-                  className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Links Section */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Let&apos;s Connect
-            </h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/your-github-username"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-              >
-                <FaGithub className="w-5 h-5" />
+    <footer className="bg-white rounded-lg shadow dark:bg-gray-900 ">
+      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <Link
+            href="https://flowbite.com/"
+            className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+          >
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              rabby-web
+            </span>
+          </Link>
+          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+            <li>
+              <Link href="#" className="hover:underline me-4 md:me-6">
+                About
+              </Link>
+            </li>
+            <li>
+              <a href="#" className="hover:underline me-4 md:me-6">
+                Privacy Policy
               </a>
-              <a
-                href="https://linkedin.com/in/your-linkedin-profile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-              >
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://twitter.com/your-twitter-handle"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-              >
-                <FaTwitter className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:your-email@example.com"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-              >
-                <FaEnvelope className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+            </li>
+            <li>
+              <Link href="#" className="hover:underline me-4 md:me-6">
+                Licensing
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:underline">
+                Contact
+              </Link>
+            </li>
+          </ul>
         </div>
-
-        {/* Copyright Section */}
-        <div className="mt-8 border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            &copy; {currentYear} Your Name. All rights reserved.
-          </p>
-        </div>
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          © 2025{" "}
+          <Link href="https://flowbite.com/" className="hover:underline">
+            Zulkar Naeem Rabby
+          </Link>
+          . All Rights Reserved.
+        </span>
       </div>
     </footer>
   );
