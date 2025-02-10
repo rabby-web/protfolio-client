@@ -1,12 +1,12 @@
 import HomeBanner from "@/components/shared/HomeBanner";
-import AboutPage from "./about/page";
 import SkillPage from "./skill/page";
+import FeaturedProject from "@/components/Featured/FeaturedProject";
 
 export default function Home() {
   return (
     <div>
       <HomeBanner></HomeBanner>
-      <AboutPage></AboutPage>
+      <FeaturedProject></FeaturedProject>
       <SkillPage></SkillPage>
     </div>
   );
