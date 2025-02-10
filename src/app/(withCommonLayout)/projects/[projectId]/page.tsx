@@ -9,7 +9,7 @@ interface Product {
   title: string;
   content: string;
   image: string;
-  technologies: string[]; // Ensure `technologies` is an array of strings
+  technologies: string[]; 
   liveDemoLink: string;
   repoLinkClient: string;
   repoLinkServer: string;

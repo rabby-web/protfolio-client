@@ -40,8 +40,9 @@ export default function Navbar() {
     { href: "/about", label: "About" },
     { href: "/skill", label: "Skill" },
     { href: "/projects", label: "Projects" },
+    { href: "/blogs", label: "Blogs" },
     { href: "/contact", label: "Contact" },
-    { href: "/dashboard", label: "Dashboard" },
+    { href: "/dashboard", label: "Dashboard" },  
   ];
 
   return (
