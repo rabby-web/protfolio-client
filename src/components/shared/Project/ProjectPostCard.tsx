@@ -27,7 +27,7 @@ function ProjectPostCard({ product }: ProjectPostCardProps) {
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-transform duration-300 hover:scale-105">
       {/* Project Image */}
-      <div className="relative h-48 w-full">
+      <div className="relative h-56 w-full">
         <Image
           src={product.image}
           alt={product.name}
@@ -76,9 +76,7 @@ function ProjectPostCard({ product }: ProjectPostCardProps) {
 
           {/* GitHub Repo Button */}
           <Link
-            href={product.repoLinkClient}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/projects/${product._id}`}
             className="flex-1 flex items-center justify-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300"
           >
             Details

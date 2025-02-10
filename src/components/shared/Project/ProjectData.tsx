@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import ProjectPostCard from "./ProjectPostCard";
 
@@ -29,7 +27,7 @@ const ProjectData = async () => {
   return (
     <div>
       <h1 className="text-center text-3xl">Feature Project</h1>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-8 w-[90%] mx-auto my-6 container">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-1 gap-8 w-[90%] mx-auto my-6 container">
         {products.map((product: Product) => (
           <ProjectPostCard product={product} key={product._id} />
         ))}
