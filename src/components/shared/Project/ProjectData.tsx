@@ -1,26 +1,41 @@
+
+
+import React from "react";
 import ProjectPostCard from "./ProjectPostCard";
 
-export default function ProjectData() {
-  const blogPostData = {
-    name: "Personal Portfolio Website",
-    category: "Web Development",
-    title: "Showcase My Skills & Projects",
-    content:
-      "This is a personal portfolio website where I showcase all of my skills, projects, and achievements as a developer.",
-    image:
-      "https://res.cloudinary.com/daxjf1buu/image/upload/v1735376160/2025010001Student000.jpg",
-    technologies: ["React", "Node.js", "MongoDB", "CSS"],
-    liveDemoLink: "https://example.com/portfolio-demo",
-    repoLinkClient: "https://github.com/username/portfolio-client",
-    repoLinkServer: "https://github.com/username/portfolio-server",
-  };
+interface Product {
+  _id: string;
+  name: string;
+  category: string;
+  title: string;
+  content: string;
+  image: string;
+  technologies: string[];
+  liveDemoLink: string;
+  repoLinkClient: string;
+  repoLinkServer: string;
+  isPublished: boolean;
+}
 
+const ProjectData = async () => {
+  const res = await fetch("http://localhost:5000/api/v1/projects", {
+    cache: "no-store",
+  });
+
+  const productsData = await res.json();
+  const products: Product[] = productsData.data; // Explicitly define the type
+
+  console.log(products);
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <ProjectPostCard {...blogPostData} />
-        {/* Add more ProjectPostCard components here */}
+    <div>
+      <h1 className="text-center text-3xl">Feature Project</h1>
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-8 w-[90%] mx-auto my-6 container">
+        {products.map((product: Product) => (
+          <ProjectPostCard product={product} key={product._id} />
+        ))}
       </div>
     </div>
   );
-}
+};
+
+export default ProjectData;
