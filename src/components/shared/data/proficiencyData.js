@@ -213,14 +213,14 @@ export const icons = [
   },
   // tools
   {
-    id: 26,
+    id: 44,
     title: "Code Editor",
     image: vsCodeIcon,
     name: "VS Code",
     category: "tools",
   },
   {
-    id: 27,
+    id: 55,
     title: "Version Control System",
     image: gitIcon,
     name: "Git",
