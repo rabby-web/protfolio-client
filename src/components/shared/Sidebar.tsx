@@ -61,11 +61,11 @@ export default function Sidebar() {
           </li>
           <li>
             <Link
-              href="/contact"
+              href="/dashboard/contact"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
               <FaEnvelope className="mr-3" />
-              Contact
+              Contact Data
             </Link>
           </li>
         </ul>

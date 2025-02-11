@@ -1,17 +1,18 @@
 import React from "react";
 import BlogPostCard from "./BlogPostCard";
+import { Blog } from "@/types";
 
-interface Blog {
-  _id: string;
-  category: string;
-  name: string;
-  image: string;
-  title: string;
-  content: string;
-  isPublished: boolean;
-  views?: number;
-  likes?: number;
-}
+// interface Blog {
+//   _id: string;
+//   category: string;
+//   name: string;
+//   image: string;
+//   title: string;
+//   content: string;
+//   isPublished: boolean;
+//   views?: number;
+//   likes?: number;
+// }
 
 const BlogData = async () => {
   const res = await fetch("http://localhost:5000/api/v1/blogs", {

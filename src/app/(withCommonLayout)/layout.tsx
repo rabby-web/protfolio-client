@@ -1,3 +1,4 @@
+import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
@@ -13,6 +14,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = async ({ children }) => {
     <div>
       <Navbar session={session} />
       {children}
+      <Footer></Footer>
     </div>
   );
 };

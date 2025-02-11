@@ -21,3 +21,10 @@ export interface Product {
   repoLinkClient: string;
   repoLinkServer: string;
 }
+
+export interface Contact {
+  _id: string;
+  email: string;
+  name: string;
+  message: string;
+}
