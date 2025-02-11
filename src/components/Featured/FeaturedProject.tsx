@@ -23,7 +23,6 @@ const FeaturedProject = async () => {
   const productsData = await res.json();
   const products: Product[] = productsData.data; // Explicitly define the type
 
-  console.log(products);
   return (
     <div>
       <h1 className="text-center text-3xl">Feature Project</h1>

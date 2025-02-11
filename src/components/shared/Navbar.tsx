@@ -12,8 +12,17 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
+import { signOut } from "next-auth/react";
 
-export default function Navbar() {
+type UserProps = {
+  user?: {
+    name?: string | null | undefined;
+    email?: string | null | undefined;
+    image?: string | null | undefined;
+  };
+};
+
+export default function Navbar({ session }: { session: UserProps | null }) {
   const [darkMode, setDarkMode] = useState(false);
   const pathname = usePathname();
 
@@ -42,7 +51,7 @@ export default function Navbar() {
     { href: "/projects", label: "Projects" },
     { href: "/blogs", label: "Blogs" },
     { href: "/contact", label: "Contact" },
-    { href: "/dashboard", label: "Dashboard" },  
+    { href: "/dashboard", label: "Dashboard" },
   ];
 
   return (
@@ -89,11 +98,20 @@ export default function Navbar() {
               </Switch>
             </div>
 
-            <Link href="/login">
-              <Button className="hidden md:inline-flex bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]">
-                Login
+            {session?.user ? (
+              <Button
+                onClick={() => signOut()}
+                className="hidden md:inline-flex bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]"
+              >
+                Logout
               </Button>
-            </Link>
+            ) : (
+              <Link href="/login">
+                <Button className="hidden md:inline-flex bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]">
+                  Login
+                </Button>
+              </Link>
+            )}
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="md:hidden">
@@ -123,11 +141,20 @@ export default function Navbar() {
                   </DropdownMenuItem>
                 ))}
                 <DropdownMenuItem className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
-                  <Link href="/login">
-                    <Button className="bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-4 py-1 rounded-md transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]">
-                      Login
+                  {session?.user ? (
+                    <Button
+                      onClick={() => signOut()}
+                      className="bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-4 py-1 rounded-md transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]"
+                    >
+                      Logout
                     </Button>
-                  </Link>
+                  ) : (
+                    <Link href="/login">
+                      <Button className="bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-4 py-1 rounded-md transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]">
+                        Login
+                      </Button>
+                    </Link>
+                  )}
                 </DropdownMenuItem>
                 <DropdownMenuItem className="flex items-center space-x-2 hover:bg-gray-100 dark:hover:bg-gray-700">
                   <Switch
