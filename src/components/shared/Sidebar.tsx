@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FaHome, FaUser, FaCog, FaEnvelope, FaBars } from "react-icons/fa";
+import { FaHome, FaCog, FaEnvelope, FaBars } from "react-icons/fa";
+import { IoIosCreate } from "react-icons/io";
 
 export default function Sidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -43,11 +44,11 @@ export default function Sidebar() {
           </li>
           <li>
             <Link
-              href="/profile"
+              href="/dashboard/createBlog"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
-              <FaUser className="mr-3" />
-              Profile
+              <IoIosCreate className="mr-3" />
+              Create Blog
             </Link>
           </li>
           <li>

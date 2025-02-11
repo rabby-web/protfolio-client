@@ -18,13 +18,13 @@ const ContactTable = ({ contact }: { contact: Contact }) => {
       <Table>
         <TableHeader>
           <TableRow className="bg-gray-50 dark:bg-gray-800">
-            <TableHead className="text-gray-600 dark:text-gray-300 font-medium">
+            <TableHead className="text-gray-600 dark:text-gray-300 font-semibold">
               User Name
             </TableHead>
-            <TableHead className="text-gray-600 dark:text-gray-300 font-medium">
+            <TableHead className="text-gray-600 dark:text-gray-300 font-semibold">
               User Email
             </TableHead>
-            <TableHead className="text-gray-600 dark:text-gray-300 font-medium">
+            <TableHead className="text-gray-600 dark:text-gray-300 font-semibold">
               Message
             </TableHead>
           </TableRow>
