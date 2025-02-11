@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaHome, FaCog, FaEnvelope, FaBars } from "react-icons/fa";
 import { IoIosCreate } from "react-icons/io";
+import { MdManageHistory } from "react-icons/md";
 
 export default function Sidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -44,11 +45,20 @@ export default function Sidebar() {
           </li>
           <li>
             <Link
-              href="/dashboard/createBlog"
+              href="/dashboard/blogs/createBlog"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
               <IoIosCreate className="mr-3" />
               Create Blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/blogs"
+              className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
+            >
+              <MdManageHistory className="mr-3" />
+              Manage Blog
             </Link>
           </li>
           <li>
