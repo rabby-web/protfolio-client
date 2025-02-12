@@ -1,19 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Blog } from "@/types";
 // import { FaEye, FaHeart } from "react-icons/fa"; // Import icons for views and likes
 
-interface Blog {
-  _id: string;
-  category: string;
-  name: string;
-  image: string;
-  title: string;
-  content: string;
-  isPublished: boolean;
-  views?: number;
-  likes?: number;
-}
+// Predefined colors for categories
+const categoryColors = [
+  "bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100",
+  "bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100",
+  "bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-100",
+  "bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100",
+  "bg-purple-100 text-purple-800 dark:bg-purple-800 dark:text-purple-100",
+  "bg-pink-100 text-pink-800 dark:bg-pink-800 dark:text-pink-100",
+  "bg-indigo-100 text-indigo-800 dark:bg-indigo-800 dark:text-indigo-100",
+];
 
 interface FeatureBlogCardProps {
   blog: Blog;
@@ -31,12 +31,17 @@ const BlogPostCard: React.FC<FeatureBlogCardProps> = ({ blog }) => {
           objectFit="cover"
           className="rounded-t-lg"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
       </div>
 
       {/* Blog Content */}
       <div className="p-6">
         {/* Blog Category */}
-        <span className="inline-block bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 text-xs font-semibold px-2.5 py-0.5 rounded">
+        <span
+          className={`inline-block text-xs font-semibold px-2.5 py-0.5 rounded ${
+            categoryColors[Math.floor(Math.random() * categoryColors.length)]
+          }`}
+        >
           {blog.category}
         </span>
 
@@ -66,7 +71,7 @@ const BlogPostCard: React.FC<FeatureBlogCardProps> = ({ blog }) => {
         <div className="mt-6">
           <Link
             href={`/blogs/${blog._id}`} // Link to the blog details page
-            className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300"
+            className="flex items-center justify-center gap-2 bg-[#28bcae] dark:bg-[#39B9B7] text-white dark:text-gray-900 hover:bg-[#1f9c8f] dark:hover:bg-[#2da7a5] font-semibold py-2 px-4 rounded-lg transition-colors duration-300"
           >
             Read More
           </Link>

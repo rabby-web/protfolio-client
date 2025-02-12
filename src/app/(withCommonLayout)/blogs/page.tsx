@@ -3,8 +3,7 @@ import React from "react";
 
 const BlogPage = () => {
   return (
-    <div>
-      <h2>Blog Pages</h2>
+    <div className="min-h-screen">
       <BlogData></BlogData>
     </div>
   );

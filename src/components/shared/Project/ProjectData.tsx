@@ -22,7 +22,7 @@ const ProjectData = async () => {
   const productsData = await res.json();
   const products: Product[] = productsData.data; // Explicitly define the type
 
-  console.log(products);
+ 
   return (
     <div className="">
       <div className="grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-8 w-[90%] mx-auto my-6 container">
