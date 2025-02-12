@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
 import { signOut } from "next-auth/react";
+import Image from "next/image";
 
 type UserProps = {
   user?: {
@@ -57,22 +58,29 @@ export default function Navbar({ session }: { session: UserProps | null }) {
   return (
     <nav className="bg-white dark:bg-[#111827] border-b border-gray-200 dark:border-gray-700 transition-colors duration-300 sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center ">
           <Link
             href="/"
-            className="text-xl font-bold text-gray-900 dark:text-gray-50"
+            className="flex items-center space-x-2 text-xl font-bold text-[#28bcae] dark:text-[#39B9B7]"
           >
-            Portfolio {/* Replace with your logo component or image */}
+            <Image
+              src="https://res.cloudinary.com/daxjf1buu/image/upload/v1739348942/r-logo_bmw9vm.png"
+              alt="Rabby Logo"
+              width={25}
+              height={25}
+              priority
+            />
+            <span>Rabby</span>
           </Link>
 
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-6 py-4 text-lg">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-300 ${
+                className={`text-gray-800 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-300 ${
                   pathname === link.href
-                    ? "font-bold text-[#6366F1] dark:text-[#818CF8]"
+                    ? "font-bold text-[#28bcae] dark:text-[#39B9B7]"
                     : ""
                 }`}
               >
@@ -101,13 +109,13 @@ export default function Navbar({ session }: { session: UserProps | null }) {
             {session?.user ? (
               <Button
                 onClick={() => signOut()}
-                className="hidden md:inline-flex bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]"
+                className="hidden md:inline-flex bg-[#28bcae] dark:bg-[#39B9B7] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:bg-[#28bcae] dark:hover:bg-[#39B9B7]"
               >
                 Logout
               </Button>
             ) : (
               <Link href="/login">
-                <Button className="hidden md:inline-flex bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]">
+                <Button className="hidden md:inline-flex bg-[#28bcae] dark:bg-[#39B9B7] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:bg-[#28bcae] dark:hover:bg-[#39B9B7]">
                   Login
                 </Button>
               </Link>
@@ -116,23 +124,23 @@ export default function Navbar({ session }: { session: UserProps | null }) {
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="md:hidden">
                 <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-full text-gray-600 dark:text-gray-400" />
+                  <Menu className="h-8 w-full text-gray-800 dark:text-gray-200 hover:text-gray-800" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-700"
+                className="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-700 w-52"
               >
                 {navLinks.map((link) => (
                   <DropdownMenuItem
                     key={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="text-gray-800 dark:text-gray-200 hover:text-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     <Link
                       href={link.href}
                       className={`${
                         pathname === link.href
-                          ? "font-bold text-[#6366F1] dark:text-[#818CF8]"
+                          ? "font-bold text-[#28bcae] dark:text-[#39B9B7]"
                           : ""
                       }`}
                     >
@@ -140,17 +148,17 @@ export default function Navbar({ session }: { session: UserProps | null }) {
                     </Link>
                   </DropdownMenuItem>
                 ))}
-                <DropdownMenuItem className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                <DropdownMenuItem className="text-gray-800 dark:text-gray-200 hover:text-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700">
                   {session?.user ? (
                     <Button
                       onClick={() => signOut()}
-                      className="bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-4 py-1 rounded-md transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]"
+                      className="bg-[#28bcae] dark:bg-[#39B9B7] text-white font-semibold px-4 py-1 rounded-md transition-all duration-300 hover:bg-hover:bg-[#28bcae] dark:hover:bg-[#39B9B7]"
                     >
                       Logout
                     </Button>
                   ) : (
                     <Link href="/login">
-                      <Button className="bg-[#6366F1] dark:bg-[#818CF8] text-white font-semibold px-4 py-1 rounded-md transition-all duration-300 hover:bg-[#4F46E5] dark:hover:bg-[#6D7AFF]">
+                      <Button className="bg-[#28bcae] dark:bg-[#39B9B7] text-white font-semibold px-4 py-1 rounded-md transition-all duration-300 hover:bg-[#28bcae] dark:hover:bg-[#39B9B7]">
                         Login
                       </Button>
                     </Link>
@@ -162,7 +170,7 @@ export default function Navbar({ session }: { session: UserProps | null }) {
                     checked={darkMode}
                     onCheckedChange={setDarkMode}
                   />
-                  <span className="text-gray-600 dark:text-gray-400">
+                  <span className="text-[#28bcae] dark:text-[#39B9B7]">
                     Dark Mode
                   </span>
                 </DropdownMenuItem>
