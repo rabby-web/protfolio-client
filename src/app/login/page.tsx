@@ -31,7 +31,7 @@ const LoginPage = () => {
             <button
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl: "https://rabby-protfolio.vercel.app/dashboard",
                 })
               }
               className="w-full flex items-center justify-center bg-[#F9FAFD] dark:bg-[#0E1217] border border-gray-300 rounded-lg py-3 px-6 shadow-sm hover:bg-gray-50 transition-colors"
@@ -51,7 +51,7 @@ const LoginPage = () => {
             <button
               onClick={() =>
                 signIn("github", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl: "https://rabby-protfolio.vercel.app/dashboard",
                 })
               }
               className="w-full flex items-center justify-center bg-white border border-gray-300 rounded-lg py-3 px-6 shadow-sm hover:bg-gray-50 transition-colors"
