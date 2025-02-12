@@ -1,4 +1,4 @@
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -12,6 +12,7 @@ import {
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
 import { createContacts } from "@/actions/createContacts";
+import toast, { Toaster } from "react-hot-toast"; // Import toast for notifications
 
 // Define the form data types
 type FormData = {
@@ -25,6 +26,7 @@ const ContactPage = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset, // Add reset to clear the form after submission
   } = useForm<FormData>();
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -33,11 +35,18 @@ const ContactPage = () => {
     formData.append("email", data.email);
     formData.append("message", data.message);
 
-    await createContacts(formData);
+    try {
+      await createContacts(formData);
+      toast.success("Message sent successfully!"); // Success toast
+      reset(); // Clear the form
+    } catch (error) {
+      toast.error("Failed to send message. Please try again."); // Error toast
+    }
   };
 
   return (
     <div>
+      <Toaster position="top-center" /> {/* Toast container */}
       <div className="md:h-[60rem] h-[68rem] w-full dark:bg-[#0B1120] bg-white dark:bg-dot-white/[0.1] bg-dot-black/[0.1]">
         {/* Radial gradient for the container to give a faded look */}
         <div className="pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
@@ -124,11 +133,11 @@ const ContactPage = () => {
                 <div className="w-20 h-1.5 bg-dark-03 dark:text-white mb-5 ml-2"></div>
                 <div className="flex gap-3 font-medium text-xl items-center">
                   <FaWhatsapp
-                    className="text-dark-03 dark:text-[#3CD1B8] text-3xl"
+                    className="text-dark-03 dark:text-[#3CD1B8] text-3xl hover:text-[#3CD1B8] dark:hover:text-[#4ca1e7] transition-colors"
                     aria-label="WhatsApp"
                   />
                   <Link
-                    className="text-dark-01 dark:text-white"
+                    className="text-dark-01 dark:text-white hover:text-[#3CD1B8] dark:hover:text-[#4ca1e7] transition-colors"
                     href="https://wa.me/01540643211"
                   >
                     01540643211
@@ -136,11 +145,11 @@ const ContactPage = () => {
                 </div>
                 <div className="flex gap-3 font-medium text-xl items-center mt-2">
                   <MdEmail
-                    className="text-dark-03 dark:text-[#3CD1B8] text-3xl"
+                    className="text-dark-03 dark:text-[#3CD1B8] text-3xl hover:text-[#3CD1B8] dark:hover:text-[#4ca1e7] transition-colors"
                     aria-label="Email"
                   />
                   <Link
-                    className="text-dark-01 dark:text-white"
+                    className="text-dark-01 dark:text-white hover:text-[#3CD1B8] dark:hover:text-[#4ca1e7] transition-colors"
                     href="mailto:rabby-webdeveloper@gmail.com"
                   >
                     rabby-webdeveloper@gmail.com
@@ -152,19 +161,19 @@ const ContactPage = () => {
                   </h2>
                   <div className="text-dark-03 dark:text-[#3CD1B8] flex flex-col md:flex-row gap-4 mt-4">
                     <Link href="https://github.com/rabby-web">
-                      <div className="flex items-center justify-center gap-2 border rounded px-2 py-1 hover:dark:text-[#4ca1e7] hover:dark:border-[#4ca1e7]">
+                      <div className="flex items-center justify-center gap-2 border rounded px-2 py-1 hover:text-[#3CD1B8] hover:border-[#3CD1B8] dark:hover:text-[#4ca1e7] dark:hover:border-[#4ca1e7] transition-colors">
                         <FaGithub aria-label="GitHub" />
                         <h2>GitHub</h2>
                       </div>
                     </Link>
                     <Link href="https://www.linkedin.com/in/rabby-web/">
-                      <div className="flex items-center justify-center gap-2 border rounded px-2 py-1 hover:dark:text-[#4ca1e7] hover:dark:border-[#4ca1e7]">
+                      <div className="flex items-center justify-center gap-2 border rounded px-2 py-1 hover:text-[#3CD1B8] hover:border-[#3CD1B8] dark:hover:text-[#4ca1e7] dark:hover:border-[#4ca1e7] transition-colors">
                         <FaLinkedin aria-label="LinkedIn" />
                         <h2>LinkedIn</h2>
                       </div>
                     </Link>
                     <Link href="https://www.facebook.com/">
-                      <div className="flex items-center justify-center gap-2 border rounded px-2 py-1 hover:dark:text-[#4ca1e7] hover:dark:border-[#4ca1e7]">
+                      <div className="flex items-center justify-center gap-2 border rounded px-2 py-1 hover:text-[#3CD1B8] hover:border-[#3CD1B8] dark:hover:text-[#4ca1e7] dark:hover:border-[#4ca1e7] transition-colors">
                         <FaFacebook aria-label="Facebook" />
                         <h2>Facebook</h2>
                       </div>
