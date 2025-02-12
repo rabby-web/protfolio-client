@@ -11,15 +11,15 @@ const BlogPage = async () => {
   const blogs: Blog[] = blogsData.data;
 
   return (
-    <div className="container mx-auto mt-10">
-      <h2 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6">
+    <div className="container mx-auto pt-10 min-h-screen">
+      <h2 className="text-3xl font-bold text-[#39B9B7] dark:text-[#39B9B7] mb-6">
         Manage Blogs
       </h2>
 
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-700 shadow-md rounded-lg">
           <thead>
-            <tr className="bg-blue-500 dark:bg-blue-600 text-white">
+            <tr className="bg-[#39B9B7] dark:bg-[#2F9E9C] text-white">
               <th className="py-3 px-4 border border-gray-200 dark:border-gray-700">
                 Title
               </th>
@@ -29,7 +29,6 @@ const BlogPage = async () => {
               <th className="py-3 px-4 border border-gray-200 dark:border-gray-700">
                 Category
               </th>
-
               <th className="py-3 px-4 border border-gray-200 dark:border-gray-700">
                 Actions
               </th>
@@ -50,14 +49,13 @@ const BlogPage = async () => {
                 <td className="py-3 px-4 border border-gray-200 dark:border-gray-700">
                   {blog.category}
                 </td>
-
                 <td className="py-3 px-4 border border-gray-200 dark:border-gray-700">
                   <div className="flex gap-4 justify-center">
                     {/* Details Button */}
                     <Link href={`/blogs/${blog._id}`}>
                       <button
-                        className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition duration-300"
-                        title="Edit Blog"
+                        className="p-2 bg-[#39B9B7] text-white rounded hover:bg-[#2F9E9C] dark:bg-[#39B9B7] dark:hover:bg-[#2F9E9C] transition duration-300"
+                        title="View Details"
                       >
                         <IoEyeSharp size={18} />
                       </button>
@@ -65,7 +63,7 @@ const BlogPage = async () => {
                     {/* Update Button */}
                     <Link href={`/dashboard/blogs/update/${blog._id}`}>
                       <button
-                        className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition duration-300"
+                        className="p-2 bg-[#39B9B7] text-white rounded hover:bg-[#2F9E9C] dark:bg-[#39B9B7] dark:hover:bg-[#2F9E9C] transition duration-300"
                         title="Edit Blog"
                       >
                         <Pencil size={18} />

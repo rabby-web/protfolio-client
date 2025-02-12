@@ -73,75 +73,120 @@ const UpdateBlogs = ({ params }: any) => {
   };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-blue-600">Update Blog</h1>
-      <form
-        onSubmit={handleSubmit}
-        className="mt-6 p-4 bg-white shadow-md rounded-lg"
-      >
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Name"
-          className="p-2 border border-gray-300 rounded w-full"
-        />
-        <input
-          type="text"
-          name="category"
-          value={formData.category}
-          onChange={handleChange}
-          placeholder="Category"
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
-        />
-        <input
-          type="text"
-          name="title"
-          value={formData.title}
-          onChange={handleChange}
-          placeholder="Title"
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
-        />
-        <input
-          type="text"
-          name="image"
-          value={formData.image}
-          onChange={handleChange}
-          placeholder="Image URL"
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
-        />
-        <input
-          type="number"
-          name="views"
-          value={formData.views}
-          onChange={handleChange}
-          placeholder="Views"
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
-        />
-        <input
-          type="number"
-          name="likes"
-          value={formData.likes}
-          onChange={handleChange}
-          placeholder="Likes"
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
-        />
-        <textarea
-          name="content"
-          value={formData.content}
-          onChange={handleChange}
-          placeholder="Content"
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
-          rows={5}
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white p-2 mt-4 rounded hover:bg-blue-700"
+    <div className="min-h-screen p-6 bg-gray-50">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl font-bold text-[#39B9B7] mb-6">Update Blog</h1>
+        <form
+          onSubmit={handleSubmit}
+          className="p-6 bg-white rounded-lg shadow-md"
         >
-          Update Blog
-        </button>
-      </form>
+          {/* Name */}
+          <div className="mb-4">
+            <label className="block text-gray-700 font-medium mb-2">
+              Author Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Name"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
+            />
+          </div>
+          {/* Category */}
+          <div className="mb-4">
+            <label className="block text-gray-700 font-medium mb-2">
+              Category
+            </label>
+            <input
+              type="text"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              placeholder="Category"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
+            />
+          </div>
+          {/* Title */}
+          <div className="mb-4">
+            <label className="block text-gray-700 font-medium mb-2">
+              Title
+            </label>
+            <input
+              type="text"
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
+              placeholder="Title"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
+            />
+          </div>
+          {/* Image URL */}
+          <div className="mb-4">
+            <label className="block text-gray-700 font-medium mb-2">
+              Image URL
+            </label>
+            <input
+              type="text"
+              name="image"
+              value={formData.image}
+              onChange={handleChange}
+              placeholder="Image URL"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
+            />
+          </div>
+          {/* Views */}
+          <div className="mb-4">
+            <label className="block text-gray-700 font-medium mb-2">
+              Views
+            </label>
+            <input
+              type="number"
+              name="views"
+              value={formData.views}
+              onChange={handleChange}
+              placeholder="Views"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
+            />
+          </div>
+          {/* Likes */}
+          <div className="mb-4">
+            <label className="block text-gray-700 font-medium mb-2">
+              Likes
+            </label>
+            <input
+              type="number"
+              name="likes"
+              value={formData.likes}
+              onChange={handleChange}
+              placeholder="Likes"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
+            />
+          </div>
+          {/* Content */}
+          <div className="mb-4">
+            <label className="block text-gray-700 font-medium mb-2">
+              Content
+            </label>
+            <textarea
+              name="content"
+              value={formData.content}
+              onChange={handleChange}
+              placeholder="Content"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
+              rows={5}
+            />
+          </div>
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full bg-[#39B9B7] text-white p-2 rounded hover:bg-[#2F9E9C] transition-colors"
+          >
+            Update Blog
+          </button>
+        </form>
+      </div>
       <ToastContainer />
     </div>
   );

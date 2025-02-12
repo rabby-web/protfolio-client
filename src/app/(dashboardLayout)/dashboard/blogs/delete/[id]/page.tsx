@@ -54,28 +54,35 @@ const DeleteBlog = ({ params }: any) => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-blue-600">Delete Blog</h1>
-      {member ? (
-        <div className="mt-6 p-4 bg-white shadow-md rounded-lg">
-          <p className="text-lg font-semibold">
+      <div className="container mx-auto p-4">
+        {" "}
+        {/* Added container for centering */}
+        <h1 className="text-3xl font-bold text-[#39B9B7] mb-4 ">
+          Delete Blog
+        </h1>{" "}
+        {/* Added margin bottom */}
+        <div className="bg-white shadow-md rounded-lg p-6">
+          {" "}
+          {/* Improved padding */}
+          <p className="text-lg font-semibold text-[#39B9B7] mb-2">
+            {" "}
+            {/* Added margin bottom */}
             Are you sure you want to delete the Blog?
           </p>
           <p className="mt-2">Name: {member?.data.name}</p>
           <p className="mt-2">Category: {member?.data.category}</p>
           <p className="mt-2">Title: {member?.data.title}</p>
-          <p className="mt-2">Name: {member?.data.name}</p>
-
+          {/* Removed duplicate Name field */}
           <button
             onClick={handleDelete}
-            className="bg-red-600 text-white p-2 mt-4 rounded hover:bg-red-700"
+            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 mt-4 rounded-lg transition duration-300" // Improved button styling
           >
             Delete Blog
           </button>
         </div>
-      ) : (
-        <p>Loading blog details...</p>
-      )}
-      <ToastContainer />
+        <ToastContainer position="top-right" autoClose={3000} />{" "}
+        {/* Toast configuration */}
+      </div>
     </div>
   );
 };
