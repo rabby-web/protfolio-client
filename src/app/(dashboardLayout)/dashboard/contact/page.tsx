@@ -3,9 +3,12 @@ import { Contact } from "@/types";
 import React from "react";
 
 const ContactMessage = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/contacts", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://nextjs-blog-protfolio-server.vercel.app/api/v1/contacts",
+    {
+      cache: "no-store",
+    }
+  );
 
   const contactsData = await res.json();
   const contacts: Contact[] = contactsData.data;

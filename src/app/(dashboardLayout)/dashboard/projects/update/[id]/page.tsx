@@ -23,7 +23,9 @@ const UpdateProjects = ({ params }: any) => {
 
   useEffect(() => {
     const fetchProject = async () => {
-      const res = await fetch(`http://localhost:5000/api/v1/projects/${id}`);
+      const res = await fetch(
+        `https://nextjs-blog-protfolio-server.vercel.app/api/v1/projects/${id}`
+      );
       const data = await res.json();
       setFormData(data.data); // Assuming the API returns the project data in `data.data`
     };
@@ -50,13 +52,16 @@ const UpdateProjects = ({ params }: any) => {
         ...formData,
       };
       console.log(dataToSend);
-      const res = await fetch(`http://localhost:5000/api/v1/projects/${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dataToSend),
-      });
+      const res = await fetch(
+        `https://nextjs-blog-protfolio-server.vercel.app/api/v1/projects/${id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        }
+      );
       if (res.ok) {
         toast.success("Project updated successfully!", {
           position: "top-right",

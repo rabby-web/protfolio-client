@@ -41,11 +41,14 @@ export default function ProjectForm() {
         ...formData,
       };
       console.log(dataToSend);
-      const response = await fetch("http://localhost:5000/api/v1/projects", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataToSend),
-      });
+      const response = await fetch(
+        "https://nextjs-blog-protfolio-server.vercel.app/api/v1/projects",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dataToSend),
+        }
+      );
 
       if (response.ok) {
         toast.success("Project created successfully!", {

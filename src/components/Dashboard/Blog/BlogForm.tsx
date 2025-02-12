@@ -33,11 +33,14 @@ export default function BlogForm() {
       };
       console.log(dataToSend);
 
-      const response = await fetch("http://localhost:5000/api/v1/blogs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataToSend), // Send the converted data
-      });
+      const response = await fetch(
+        "https://nextjs-blog-protfolio-server.vercel.app/api/v1/blogs",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dataToSend), // Send the converted data
+        }
+      );
 
       if (response.ok) {
         toast.success("Blog created successfully!"); // Success toast

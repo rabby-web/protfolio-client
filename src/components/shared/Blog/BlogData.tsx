@@ -3,9 +3,12 @@ import BlogPostCard from "./BlogPostCard";
 import { Blog } from "@/types";
 
 const BlogData = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/blogs", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://nextjs-blog-protfolio-server.vercel.app/api/v1/blogs",
+    {
+      cache: "no-store",
+    }
+  );
 
   const blogsData = await res.json();
   const blogs: Blog[] = blogsData.data; // Explicitly define the type

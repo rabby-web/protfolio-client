@@ -4,9 +4,12 @@ import Link from "next/link";
 import { IoEyeSharp } from "react-icons/io5";
 
 const BlogPage = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/blogs", {
-    cache: "no-store",
-  }); // SSR
+  const res = await fetch(
+    "https://nextjs-blog-protfolio-server.vercel.app/api/v1/blogs",
+    {
+      cache: "no-store",
+    }
+  ); // SSR
   const blogsData = await res.json();
   const blogs: Blog[] = blogsData.data;
 

@@ -16,9 +16,12 @@ interface Product {
 }
 
 const FeaturedProject = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/projects", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://nextjs-blog-protfolio-server.vercel.app/api/v1/projects",
+    {
+      cache: "no-store",
+    }
+  );
 
   const productsData = await res.json();
   const products: Product[] = productsData?.data; // Explicitly define the type

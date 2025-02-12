@@ -8,7 +8,9 @@ const ProjectDetailsPage = async ({
   const { projectId } = await params;
 
   // Fetch project data from the API
-  const res = await fetch(`http://localhost:5000/api/v1/projects/${projectId}`);
+  const res = await fetch(
+    `https://nextjs-blog-protfolio-server.vercel.app/api/v1/projects/${projectId}`
+  );
 
   // Handle non-OK responses
   if (!res.ok) {

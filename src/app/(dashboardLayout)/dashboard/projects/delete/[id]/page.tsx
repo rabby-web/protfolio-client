@@ -15,7 +15,9 @@ const DeleteProject = ({ params }: any) => {
 
   useEffect(() => {
     const fetchMember = async () => {
-      const res = await fetch(`http://localhost:5000/api/v1/projects/${id}`);
+      const res = await fetch(
+        `https://nextjs-blog-protfolio-server.vercel.app/api/v1/projects/${id}`
+      );
       const data = await res.json();
       setMember(data);
     };
@@ -23,9 +25,12 @@ const DeleteProject = ({ params }: any) => {
   }, [id]);
 
   const handleDelete = async () => {
-    const res = await fetch(`http://localhost:5000/api/v1/projects/${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `https://nextjs-blog-protfolio-server.vercel.app/api/v1/projects/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     if (res.ok) {
       toast.success("Blog deleted successfully!", {
         position: "top-right",

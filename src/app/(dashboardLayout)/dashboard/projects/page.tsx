@@ -4,9 +4,12 @@ import Link from "next/link";
 import { IoEyeSharp } from "react-icons/io5";
 
 const ProjectPage = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/projects", {
-    cache: "no-store",
-  }); // SSR
+  const res = await fetch(
+    "https://nextjs-blog-protfolio-server.vercel.app/api/v1/projects",
+    {
+      cache: "no-store",
+    }
+  ); // SSR
   const projectsData = await res.json();
   const projects: Product[] = projectsData.data;
 
@@ -27,7 +30,7 @@ const ProjectPage = async () => {
             </tr>
           </thead>
           <tbody>
-            {projects.map((project) => (
+            {projects?.map((project) => (
               <tr
                 key={project._id}
                 className="border-b border-gray-200 dark:border-gray-700 hover:bg-[#E8FAF9] dark:hover:bg-gray-800 transition"

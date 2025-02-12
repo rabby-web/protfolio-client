@@ -1,7 +1,5 @@
 import BlogDetailsCard from "@/components/shared/Blog/BlogDetailsCard";
 
-
-
 const BlogDetailsPage = async ({
   params,
 }: {
@@ -10,7 +8,9 @@ const BlogDetailsPage = async ({
   const { blogId } = await params;
 
   // Fetch blog data from the API
-  const res = await fetch(`http://localhost:5000/api/v1/blogs/${blogId}`);
+  const res = await fetch(
+    `https://nextjs-blog-protfolio-server.vercel.app/api/v1/blogs/${blogId}`
+  );
 
   // Parse the response
   const blogsData = await res.json();
