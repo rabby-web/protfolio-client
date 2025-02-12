@@ -95,11 +95,12 @@ const UpdateProjects = ({ params }: any) => {
   };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-blue-600">Update Project</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen px-4">
+      <h1 className="text-3xl font-bold text-[#39B9B7] mb-6">Update Project</h1>
+
       <form
         onSubmit={handleSubmit}
-        className="mt-6 p-4 bg-white shadow-md rounded-lg"
+        className="w-full  md:w-2/3 mx-auto bg-white dark:bg-gray-900 shadow-lg rounded-lg p-6"
       >
         {/* Name */}
         <input
@@ -109,8 +110,9 @@ const UpdateProjects = ({ params }: any) => {
           onChange={handleChange}
           placeholder="Project Name"
           required
-          className="p-2 border border-gray-300 rounded w-full"
+          className="p-3 border border-gray-300 dark:border-gray-700 rounded w-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
+
         {/* Category */}
         <input
           type="text"
@@ -119,8 +121,9 @@ const UpdateProjects = ({ params }: any) => {
           onChange={handleChange}
           placeholder="Category"
           required
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
+          className="p-3 mt-4 border border-gray-300 dark:border-gray-700 rounded w-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
+
         {/* Title */}
         <input
           type="text"
@@ -129,8 +132,9 @@ const UpdateProjects = ({ params }: any) => {
           onChange={handleChange}
           placeholder="Title"
           required
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
+          className="p-3 mt-4 border border-gray-300 dark:border-gray-700 rounded w-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
+
         {/* Image URL */}
         <input
           type="url"
@@ -139,8 +143,9 @@ const UpdateProjects = ({ params }: any) => {
           onChange={handleChange}
           placeholder="Image URL"
           required
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
+          className="p-3 mt-4 border border-gray-300 dark:border-gray-700 rounded w-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
+
         {/* Live Demo Link */}
         <input
           type="url"
@@ -149,8 +154,9 @@ const UpdateProjects = ({ params }: any) => {
           onChange={handleChange}
           placeholder="Live Demo Link"
           required
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
+          className="p-3 mt-4 border border-gray-300 dark:border-gray-700 rounded w-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
+
         {/* Client Repo Link */}
         <input
           type="url"
@@ -159,8 +165,9 @@ const UpdateProjects = ({ params }: any) => {
           onChange={handleChange}
           placeholder="Client Repository Link"
           required
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
+          className="p-3 mt-4 border border-gray-300 dark:border-gray-700 rounded w-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
+
         {/* Server Repo Link */}
         <input
           type="url"
@@ -169,8 +176,9 @@ const UpdateProjects = ({ params }: any) => {
           onChange={handleChange}
           placeholder="Server Repository Link"
           required
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
+          className="p-3 mt-4 border border-gray-300 dark:border-gray-700 rounded w-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
+
         {/* Content */}
         <textarea
           name="content"
@@ -178,9 +186,10 @@ const UpdateProjects = ({ params }: any) => {
           onChange={handleChange}
           placeholder="Content"
           required
-          rows={5}
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
+          rows={4}
+          className="p-3 mt-4 border border-gray-300 dark:border-gray-700 rounded w-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
+
         {/* Technologies */}
         <select
           name="technologies"
@@ -188,7 +197,7 @@ const UpdateProjects = ({ params }: any) => {
           onChange={handleTechnologiesChange}
           multiple
           required
-          className="p-2 mt-4 border border-gray-300 rounded w-full"
+          className="p-3 mt-4 border border-gray-300 dark:border-gray-700 rounded w-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39B9B7] h-32"
         >
           <option value="React">React</option>
           <option value="Node.js">Node.js</option>
@@ -197,14 +206,16 @@ const UpdateProjects = ({ params }: any) => {
           <option value="JavaScript">JavaScript</option>
           <option value="TypeScript">TypeScript</option>
         </select>
+
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-blue-600 text-white p-2 mt-4 rounded hover:bg-blue-700"
+          className="mt-6 w-full bg-[#39B9B7] hover:bg-[#2D9E9C] text-white font-semibold py-3 rounded-md transition duration-300 shadow-md"
         >
           Update Project
         </button>
       </form>
+
       <ToastContainer />
     </div>
   );
