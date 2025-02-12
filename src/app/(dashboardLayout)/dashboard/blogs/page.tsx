@@ -72,7 +72,7 @@ const BlogPage = async () => {
                       </button>
                     </Link>
                     {/* Delete Button */}
-                    <Link href={`/blogs/delete/${blog._id}`}>
+                    <Link href={`/dashboard/blogs/delete/${blog._id}`}>
                       <button
                         className="p-2 bg-red-600 text-white rounded hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800 transition duration-300"
                         title="Delete Blog"

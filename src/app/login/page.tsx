@@ -4,8 +4,8 @@ import { signIn } from "next-auth/react";
 
 const LoginPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-50 to-teal-100 py-10">
-      <div className="w-full max-w-4xl mx-4 bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+    <div className="min-h-screen flex items-center justify-center py-10">
+      <div className="w-full max-w-4xl mx-4 bg-[#F9FAFD] dark:bg-[#0E1217] rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         {/* Left Section - Illustration */}
         <div className="w-full md:w-1/2 p-8 flex items-center justify-center">
           <Image
@@ -18,7 +18,7 @@ const LoginPage = () => {
         </div>
 
         {/* Right Section - Login Form */}
-        <div className="w-full md:w-1/2 p-8 bg-teal-50 flex flex-col justify-center">
+        <div className="w-full md:w-1/2 p-8 bg-[#F9FAFD] dark:bg-[#0E1217] flex flex-col justify-center">
           <h1 className="text-3xl font-bold text-center mb-6 text-teal-700">
             Welcome Back!
           </h1>
@@ -34,7 +34,7 @@ const LoginPage = () => {
                   callbackUrl: "http://localhost:3000/dashboard",
                 })
               }
-              className="w-full flex items-center justify-center bg-white border border-gray-300 rounded-lg py-3 px-6 shadow-sm hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center justify-center bg-[#F9FAFD] dark:bg-[#0E1217] border border-gray-300 rounded-lg py-3 px-6 shadow-sm hover:bg-gray-50 transition-colors"
             >
               <Image
                 src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
