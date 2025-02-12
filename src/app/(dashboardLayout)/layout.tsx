@@ -11,7 +11,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       <div className="w-64">
         <Sidebar />
       </div>
-      <div className="flex-1 p-5">{children}</div>
+      <div className="flex-1 p-4 bg-gray-700 text-gray-300">{children}</div>
     </div>
   );
 };

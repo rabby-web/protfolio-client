@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaHome, FaEnvelope, FaBars } from "react-icons/fa";
 import { IoIosCreate } from "react-icons/io";
 import { MdManageHistory } from "react-icons/md";
+import Image from "next/image";
 
 export default function Sidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -30,8 +31,23 @@ export default function Sidebar() {
         } md:translate-x-0 transition-transform duration-300 ease-in-out z-40`}
       >
         {/* Brand Name */}
-        <h2 className="text-white text-2xl font-extrabold mb-6">Brand</h2>
+        <div className="flex items-center">
+          {" "}
+          {/* Use flexbox for alignment */}
+          {/* Logo (replace with your actual logo path) */}
+          <Image
+            src="https://res.cloudinary.com/daxjf1buu/image/upload/v1739348942/r-logo_bmw9vm.png" // Or .png, .jpg, etc.
+            alt="Brand Logo"
+            width={25} // Adjust size as needed
+            height={25} // Adjust size as needed
+            className="mr-2" // Add some spacing to the right of the logo
+          />
+          <h2 className="text-[#39B9B7] text-2xl font-extrabold">Rabby</h2>
+        </div>
 
+        <div className="py-2">
+          <hr />
+        </div>
         {/* Sidebar Links */}
         <ul className="space-y-4">
           <li>
