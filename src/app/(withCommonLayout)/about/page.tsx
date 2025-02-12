@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const AboutPage = () => {
   const skills = [
     {
-      icon: <FaCode size={48} className="text-blue-500 mb-4" />,
+      icon: <FaCode size={48} className="text-[#39B9B7] mb-4" />,
       title: "Frontend Development",
       description:
         "Crafting responsive and interactive user interfaces with modern frameworks.",
@@ -29,10 +29,10 @@ const AboutPage = () => {
   return (
     <div>
       <div className="min-h-screen bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="flex flex-col gap-8 p-6 max-w-5xl mx-auto">
-          <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-white">
+        <div className="flex flex-col gap-8 p-6 max-w-5xl mx-auto pt-10">
+          {/* <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-white">
             About Me
-          </h1>
+          </h1> */}
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="grid grid-cols-1 md:grid-cols-1 gap-6 w-full lg:w-1/2">
               {skills.map((skill, index) => (
@@ -95,7 +95,7 @@ const AboutPage = () => {
               </p>
               <a
                 href="/contact"
-                className="inline-block mt-8 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors duration-300"
+                className="inline-block mt-8 px-6 py-3 bg-[#39B9B7] text-white font-semibold rounded-lg hover:bg-[#39B9B7] transition-colors duration-300"
               >
                 Let{"'"}s Work Together
               </a>

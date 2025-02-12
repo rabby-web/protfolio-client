@@ -3,8 +3,7 @@ import React from "react";
 
 const ProjectPage = () => {
   return (
-    <div>
-      <h2>Project Pages</h2>
+    <div className="min-h-screen">
       <ProjectData></ProjectData>
     </div>
   );
