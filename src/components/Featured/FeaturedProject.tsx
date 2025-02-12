@@ -21,14 +21,17 @@ const FeaturedProject = async () => {
   });
 
   const productsData = await res.json();
-  const products: Product[] = productsData.data; // Explicitly define the type
+  const products: Product[] = productsData?.data; // Explicitly define the type
 
   return (
-    <div>
-      <h1 className="text-center text-3xl">Feature Project</h1>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-8 w-[90%] mx-auto my-6 container">
-        {products.map((product: Product) => (
-          <FeatureProjectCard product={product} key={product._id} />
+    <div className="mx-auto my-4 container">
+      <div className="text-2xl font-semibold text-dark-01 dark:text-dark-03 flex items-baseline gap-1 p-3 md:mt-12">
+        <div className="text-[#3CD1B8]">Featured Project</div>
+        <div className="w-48 border border-[#3CD1B8]"></div>
+      </div>
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-8 w-[90%] my-8 mx-auto">
+        {products?.slice(0, 2).map((product: Product) => (
+          <FeatureProjectCard product={product} key={product?._id} />
         ))}
       </div>
     </div>
