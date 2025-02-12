@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FaHome, FaCog, FaEnvelope, FaBars } from "react-icons/fa";
+import { FaHome, FaEnvelope, FaBars } from "react-icons/fa";
 import { IoIosCreate } from "react-icons/io";
 import { MdManageHistory } from "react-icons/md";
 
@@ -63,11 +63,20 @@ export default function Sidebar() {
           </li>
           <li>
             <Link
-              href="/settings"
+              href="/dashboard/projects/createProject"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
-              <FaCog className="mr-3" />
-              Settings
+              <IoIosCreate className="mr-3" />
+              Create Project
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/projects"
+              className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
+            >
+              <MdManageHistory className="mr-3" />
+              Manage Project
             </Link>
           </li>
           <li>
