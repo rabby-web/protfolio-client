@@ -53,27 +53,49 @@ const DeleteProject = ({ params }: any) => {
   console.log(project?.data);
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-blue-600">Delete Blog</h1>
+    <div className="flex flex-col items-center  min-h-screen px-4">
+      <h1 className="text-3xl font-bold text-[#39B9B7] mb-6">Delete Project</h1>
+
       {project ? (
-        <div className="mt-6 p-4 bg-white shadow-md rounded-lg">
-          <p className="text-lg font-semibold">
-            Are you sure you want to delete the Blog?
+        <div className="w-full max-w-md bg-white dark:bg-gray-900 shadow-lg rounded-lg p-6 ">
+          <p className="text-lg font-semibold text-gray-800 dark:text-white">
+            Are you sure you want to delete this blog?
           </p>
-          <p className="mt-2">Name: {project?.data?.name}</p>
-          <p className="mt-2">Category: {project?.data?.category}</p>
-          <p className="mt-2">Title: {project?.data?.title}</p>
+
+          <div className="mt-4 text-gray-600 dark:text-gray-300">
+            <p className="font-medium">
+              <span className="font-semibold text-gray-900 dark:text-white">
+                Name:
+              </span>{" "}
+              {project?.data?.name}
+            </p>
+            <p className="mt-2 font-medium">
+              <span className="font-semibold text-gray-900 dark:text-white">
+                Category:
+              </span>{" "}
+              {project?.data?.category}
+            </p>
+            <p className="mt-2 font-medium">
+              <span className="font-semibold text-gray-900 dark:text-white">
+                Title:
+              </span>{" "}
+              {project?.data?.title}
+            </p>
+          </div>
 
           <button
             onClick={handleDelete}
-            className="bg-red-600 text-white p-2 mt-4 rounded hover:bg-red-700"
+            className="mt-6 w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-md transition duration-300 shadow-md"
           >
             Delete Blog
           </button>
         </div>
       ) : (
-        <p>Loading blog details...</p>
+        <p className="text-gray-600 dark:text-gray-300">
+          Loading blog details...
+        </p>
       )}
+
       <ToastContainer />
     </div>
   );

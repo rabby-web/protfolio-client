@@ -11,62 +11,46 @@ const ProjectPage = async () => {
   const projects: Product[] = projectsData.data;
 
   return (
-    <div className="container mx-auto mt-10">
-      <h2 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6">
+    <div className="container mx-auto mt-10 px-4">
+      <h2 className="text-3xl font-bold text-[#39B9B7] text-center mb-6">
         Manage Projects
       </h2>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-700 shadow-md rounded-lg">
+      <div className="overflow-x-auto bg-white dark:bg-[#111827] shadow-lg rounded-lg p-4">
+        <table className="min-w-full border-collapse  border-gray-300 dark:border-gray-700 rounded-lg">
           <thead>
-            <tr className="bg-blue-500 dark:bg-blue-600 text-white">
-              <th className="py-3 px-4 border border-gray-200 dark:border-gray-700">
-                Title
-              </th>
-              <th className="py-3 px-4 border border-gray-200 dark:border-gray-700">
-                Author
-              </th>
-              <th className="py-3 px-4 border border-gray-200 dark:border-gray-700">
-                Category
-              </th>
-
-              <th className="py-3 px-4 border border-gray-200 dark:border-gray-700">
-                Actions
-              </th>
+            <tr className="bg-[#39B9B7] text-white">
+              <th className="py-3 px-4 text-left">Title</th>
+              <th className="py-3 px-4 text-left">Author</th>
+              <th className="py-3 px-4 text-left">Category</th>
+              <th className="py-3 px-4 text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
             {projects.map((project) => (
               <tr
                 key={project._id}
-                className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="border-b border-gray-200 dark:border-gray-700 hover:bg-[#E8FAF9] dark:hover:bg-gray-800 transition"
               >
-                <td className="py-3 px-4 border border-gray-200 dark:border-gray-700">
-                  {project.title}
-                </td>
-                <td className="py-3 px-4 border border-gray-200 dark:border-gray-700">
-                  {project.name}
-                </td>
-                <td className="py-3 px-4 border border-gray-200 dark:border-gray-700">
-                  {project.content}
-                </td>
-
-                <td className="py-3 px-4 border border-gray-200 dark:border-gray-700">
-                  <div className="flex gap-4 justify-center">
-                    {/* Details Button */}
+                <td className="py-3 px-4">{project.title}</td>
+                <td className="py-3 px-4">{project.name}</td>
+                <td className="py-3 px-4">{project.content}</td>
+                <td className="py-3 px-4 text-center">
+                  <div className="flex gap-3 justify-center">
+                    {/* View Button */}
                     <Link href={`/projects/${project._id}`}>
                       <button
-                        className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition duration-300"
-                        title="Edit Blog"
+                        className="p-2 bg-[#39B9B7] text-white rounded-md hover:bg-[#2B9F9C] transition"
+                        title="View Project"
                       >
                         <IoEyeSharp size={18} />
                       </button>
                     </Link>
-                    {/* Update Button */}
+                    {/* Edit Button */}
                     <Link href={`/dashboard/projects/update/${project._id}`}>
                       <button
-                        className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition duration-300"
-                        title="Edit Blog"
+                        className="p-2 bg-[#FFC107] text-white rounded-md hover:bg-[#E0A800] transition"
+                        title="Edit Project"
                       >
                         <Pencil size={18} />
                       </button>
@@ -74,8 +58,8 @@ const ProjectPage = async () => {
                     {/* Delete Button */}
                     <Link href={`/dashboard/projects/delete/${project._id}`}>
                       <button
-                        className="p-2 bg-red-600 text-white rounded hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800 transition duration-300"
-                        title="Delete Blog"
+                        className="p-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
+                        title="Delete Project"
                       >
                         <Trash2 size={18} />
                       </button>
