@@ -63,7 +63,7 @@ const BlogPage = async () => {
                       </button>
                     </Link>
                     {/* Update Button */}
-                    <Link href={`/blogs/update/${blog._id}`}>
+                    <Link href={`/dashboard/blogs/update/${blog._id}`}>
                       <button
                         className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition duration-300"
                         title="Edit Blog"
