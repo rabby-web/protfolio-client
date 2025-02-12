@@ -55,7 +55,7 @@ export default function Sidebar() {
               href="/"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
-              <FaHome className="mr-3" />
+              <FaHome className="mr-3 text-xl" />
               Home
             </Link>
           </li>
@@ -64,7 +64,7 @@ export default function Sidebar() {
               href="/dashboard/blogs/createBlog"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
-              <IoIosCreate className="mr-3" />
+              <IoIosCreate className="mr-3 text-xl" />
               Create Blog
             </Link>
           </li>
@@ -73,7 +73,7 @@ export default function Sidebar() {
               href="/dashboard/blogs"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
-              <MdManageHistory className="mr-3" />
+              <MdManageHistory className="mr-3 text-xl" />
               Manage Blog
             </Link>
           </li>
@@ -82,7 +82,7 @@ export default function Sidebar() {
               href="/dashboard/projects/createProject"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
-              <IoIosCreate className="mr-3" />
+              <IoIosCreate className="mr-3 text-xl" />
               Create Project
             </Link>
           </li>
@@ -91,7 +91,7 @@ export default function Sidebar() {
               href="/dashboard/projects"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
-              <MdManageHistory className="mr-3" />
+              <MdManageHistory className="mr-3 text-xl" />
               Manage Project
             </Link>
           </li>
@@ -100,7 +100,7 @@ export default function Sidebar() {
               href="/dashboard/contact"
               className="text-white flex items-center px-4 py-2 hover:bg-gray-800 rounded-md transition"
             >
-              <FaEnvelope className="mr-3" />
+              <FaEnvelope className="mr-3 text-xl" />
               Contact Data
             </Link>
           </li>

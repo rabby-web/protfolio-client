@@ -85,11 +85,11 @@ export default function ProjectForm() {
   };
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold text-blue-600 mb-6">Create Project</h1>
+    <div className="p-6 md:w-2/3 mx-auto">
+      <h1 className="text-3xl font-bold text-[#39B9B7] mb-6">Create Project</h1>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 p-6 bg-gray-50 rounded-lg shadow-md"
+        className="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md"
       >
         {/* Name */}
         <input
@@ -99,7 +99,7 @@ export default function ProjectForm() {
           onChange={handleChange}
           placeholder="Project Name"
           required
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
         {/* Category */}
         <input
@@ -109,7 +109,7 @@ export default function ProjectForm() {
           onChange={handleChange}
           placeholder="Category"
           required
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
         {/* Title */}
         <input
@@ -119,7 +119,7 @@ export default function ProjectForm() {
           onChange={handleChange}
           placeholder="Title"
           required
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
         {/* Image URL */}
         <input
@@ -129,7 +129,7 @@ export default function ProjectForm() {
           onChange={handleChange}
           placeholder="Image URL"
           required
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
         {/* Technologies */}
         <select
@@ -138,7 +138,7 @@ export default function ProjectForm() {
           onChange={handleTechnologiesChange}
           multiple
           required
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         >
           <option value="React">React</option>
           <option value="Node.js">Node.js</option>
@@ -155,7 +155,7 @@ export default function ProjectForm() {
           onChange={handleChange}
           placeholder="Live Demo Link"
           required
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
         {/* Client Repo Link */}
         <input
@@ -165,7 +165,7 @@ export default function ProjectForm() {
           onChange={handleChange}
           placeholder="Client Repository Link"
           required
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
         {/* Server Repo Link */}
         <input
@@ -175,7 +175,7 @@ export default function ProjectForm() {
           onChange={handleChange}
           placeholder="Server Repository Link"
           required
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
         {/* Content */}
         <textarea
@@ -185,12 +185,12 @@ export default function ProjectForm() {
           placeholder="Content"
           required
           rows={4}
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#39B9B7]"
         />
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+          className="bg-[#39B9B7] text-white p-2 rounded hover:bg-[#2F9E9C] transition-colors"
         >
           Create Project
         </button>

@@ -4,7 +4,7 @@ import React from "react";
 const CreateProject = () => {
   return (
     <div>
-      <h2>Create Project</h2>
+      
       <ProjectForm></ProjectForm>
     </div>
   );
