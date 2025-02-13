@@ -62,7 +62,7 @@ function ProjectPostCard({ product }: ProjectPostCardProps) {
         </p>
 
         {/* Technologies Used */}
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2">       
           {product.technologies.map((tech, index) => (
             <span
               key={index}

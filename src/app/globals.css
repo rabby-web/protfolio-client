@@ -8,19 +8,19 @@ body {
 
 /* Custom Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 /* Scrollbar Track with lighting effect on the left side */
 ::-webkit-scrollbar-track {
-  background: #a58df7;
+  background: #47e4e1;
   border-radius: 1px;
   position: relative;
 }
 
 /* Scrollbar Thumb */
 ::-webkit-scrollbar-thumb {
-  background: #8750f7;
+  background: #39b9b7;
   border-radius: 4px;
 }
 

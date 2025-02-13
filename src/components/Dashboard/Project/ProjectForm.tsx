@@ -12,7 +12,7 @@ export default function ProjectForm() {
     title: "",
     image: "",
     content: "",
-    technologies: [] as string[], // Ensure technologies is an array of strings
+    technologies: [] as string[], 
     liveDemoLink: "",
     repoLinkClient: "",
     repoLinkServer: "",
