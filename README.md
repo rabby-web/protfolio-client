@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Portfolio & Blog Website - Client
 
-## Getting Started
+## 🚀 Project Overview
 
-First, run the development server:
+This is the frontend client for the **Next.js Portfolio & Blog Website**. Built using **Next.js, TypeScript, and Tailwind CSS**, this project provides a dynamic and responsive portfolio and blogging platform.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Home Page**: Displays portfolio introduction, skills, featured projects, and a resume download option.
+- **Projects Page**: Showcases all projects with details and links.
+- **Blog Page**: Lists blog posts with individual blog pages.
+- **Contact Page**: Includes a form for visitors to send messages.
+- **Authentication**: Secure login using **NextAuth.js** (Social login).
+- **Dashboard**: Admin panel for managing projects, blogs, and messages.
+- **Dark Mode**: Toggle between light and dark themes.
+- **Animations**: Enhanced UI using Framer Motion.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔗 Live Links
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Live Website**: [https://rabby-protfolio.vercel.app/](https://rabby-protfolio.vercel.app/)
+- **Backend API**: [https://nextjs-blog-protfolio-server.vercel.app/](https://nextjs-blog-protfolio-server.vercel.app/)
+- **Client Repository**: [GitHub - Portfolio Client](https://github.com/rabby-web/protfolio-client)
+- **Server Repository**: [GitHub - Portfolio Server](https://github.com/rabby-web/protfolio-blog-server)
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend**: Next.js, TypeScript, Tailwind CSS
+- **State Management**: React Context API
+- **Authentication**: NextAuth.js (Social login)
+- **Animations**: Framer Motion
+- **Deployment**: Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Setup & Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository:**
 
-## Deploy on Vercel
+   ```sh
+   git clone https://github.com/rabby-web/protfolio-client.git
+   cd protfolio-client
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install dependencies:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```sh
+   npm install
+   ```
+
+3. **Create a `.env.local` file and configure environment variables:**
+
+   ```env
+   NEXT_PUBLIC_API_URL=your_backend_api_url
+   NEXTAUTH_SECRET=your_next_auth_secret
+   NEXT_PUBLIC_GITHUB_CLIENT_ID=your_github_client_id
+   NEXT_PUBLIC_GITHUB_CLIENT_SECRET=your_github_client_secret
+   ```
+
+4. **Run the development server:**
+
+   ```sh
+   npm run dev
+   ```
+
+5. **Build and Deploy on Vercel:**
+   ```sh
+   vercel
+   ```
+
+## 🎯 Future Improvements
+
+- Implement role-based access control.
+- Add more social authentication options.
+- Improve UI/UX with advanced animations.
+- Enhance SEO with better metadata and SSR.
+
+
+---
+
+🚀 **Happy Coding!** 🎨✨
